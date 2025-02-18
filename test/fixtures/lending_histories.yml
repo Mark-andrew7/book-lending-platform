@@ -1,13 +1,11 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  book: one
+lending_history_one:
+  book: book_one
   borrower_name: MyString
   borrowed_on: 2025-02-17 13:56:10
   returned_on: 2025-02-17 13:56:10
 
-two:
-  book: two
+lending_history_two:
+  book: book_two
   borrower_name: MyString
   borrowed_on: 2025-02-17 13:56:10
   returned_on: 2025-02-17 13:56:10

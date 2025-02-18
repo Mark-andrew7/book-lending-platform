@@ -1,4 +1,9 @@
-one:
+book_one:
   title: "Book One"
   author: "Author One"
   available: true
+
+book_two:
+  title: "Book Two"
+  author: "Author Two"
+  available: false

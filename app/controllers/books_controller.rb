@@ -50,12 +50,15 @@ class BooksController < ApplicationController
   end
 
   def return
-    @book = Book.find(params[:id])
-    @lending_history = LendingHistory.find_by(book_id: @book.id, returned_on: nil)
-    @lending_history.update(returned_on: Time.now)
-    @book.update(available: true)
-    redirect_to @book, notice: "Book returned successfully!"
+    @book = Book.find_by(id: params[:id])  # Find the book by id
+    if @book
+      @book.update(available: true)  # Update the book to available
+      redirect_to @book, notice: 'Book was successfully returned.'
+    else
+      redirect_to books_url, alert: 'Book not found.'
+    end
   end
+  
 
   private
 
