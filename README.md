@@ -1,24 +1,29 @@
-# README
+# Book Lending Library
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple book lending library application built with Ruby on Rails. Users can manage books, borrow, and return them.
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+### Clone the repo:
+git clone https://github.com/yourusername/book-lending-library.git
 
-* System dependencies
 
-* Configuration
+## Install dependencies
+bundle install
 
-* Database creation
+## Set up the database
+rails db:create
+rails db:migrate
 
-* Database initialization
+## Running the application
+rails server
+The app will be available at http://localhost:3000.
 
-* How to run the test suite
+## Running Tests
+rails test
 
-* Services (job queues, cache servers, search engines, etc.)
+## Features
+1. CRUD operations for books
+2. Borrow and return functionality
+3. Lending history
 
-* Deployment instructions
-
-* ...

@@ -1,0 +1,19 @@
+<h1><%= @book.title %> by <%= @book.author %></h1>
+<p>Status: <%= @book.available ? 'Available' : 'Borrowed' %></p>
+
+<% if @book.available %>
+  <%= form_with(url: borrow_book_path(@book), method: :post, local: true) do |form| %>
+    <%= form.label :borrower_name, "Enter your name" %>
+    <%= form.text_field :borrower_name %>
+    <%= form.submit "Borrow" %>
+  <% end %>
+<% else %>
+  <%= link_to 'Return', return_book_path(@book), method: :post %>
+<% end %>
+
+<h3>Borrowing History</h3>
+<ul>
+  <% @lending_history.each do |history| %>
+    <li><%= history.borrower_name %> borrowed on <%= history.borrowed_on %> and returned on <%= history.returned_on %></li>
+  <% end %>
+</ul>
